@@ -12,6 +12,8 @@ The app is built Rest API to do some actions for loan with actions:
 
 We assume interest rate is 0%
 
+Copy .env.example to .env then set up your configuration
+
 Run **sh build.sh** to build app after clone 
 
 Import **api.collection.json** to Postman if you want to run api. Please replace your domain to those api.
