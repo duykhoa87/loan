@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "78c71e2f-ec37-4747-893a-f54b10299a1e",
+		"name": "Loan API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://loan.local/api/user/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Admin",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "admin@domain.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://loan.local/api/user/register",
+					"protocol": "http",
+					"host": [
+						"loan",
+						"local"
+					],
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://loan.local/api/user/token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|qTCiqof89hr1eGAXCQEKPDeOiLgCKx4KMIVDaMa5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@domain.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://loan.local/api/user/token",
+					"protocol": "http",
+					"host": [
+						"loan",
+						"local"
+					],
+					"path": [
+						"api",
+						"user",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://loan.local/api/loan/store",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|qTCiqof89hr1eGAXCQEKPDeOiLgCKx4KMIVDaMa5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "amount",
+							"value": "1000000",
+							"type": "text"
+						},
+						{
+							"key": "loan_term",
+							"value": "12",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://loan.local/api/loan/store",
+					"protocol": "http",
+					"host": [
+						"loan",
+						"local"
+					],
+					"path": [
+						"api",
+						"loan",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://loan.local/api/loan/approve",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|qTCiqof89hr1eGAXCQEKPDeOiLgCKx4KMIVDaMa5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://loan.local/api/loan/approve",
+					"protocol": "http",
+					"host": [
+						"loan",
+						"local"
+					],
+					"path": [
+						"api",
+						"loan",
+						"approve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://loan.local/api/loan/pay",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|qTCiqof89hr1eGAXCQEKPDeOiLgCKx4KMIVDaMa5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "loan_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "20833",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://loan.local/api/loan/pay",
+					"protocol": "http",
+					"host": [
+						"loan",
+						"local"
+					],
+					"path": [
+						"api",
+						"loan",
+						"pay"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
